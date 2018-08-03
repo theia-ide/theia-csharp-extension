@@ -1,0 +1,33 @@
+{
+  "name": "@theia/csharp",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "data",
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "next",
+    "@theia/monaco": "next"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "^2.7.2"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "postinstall": "",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/csharp-frontend-module",
+      "backend": "lib/node/csharp-backend-module"
+    }
+  ]
+}
