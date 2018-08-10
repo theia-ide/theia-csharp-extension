@@ -3,6 +3,10 @@
   "keywords": [
     "theia-extension"
   ],
+  "license": "EPL-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.1.0",
   "files": [
     "data",
