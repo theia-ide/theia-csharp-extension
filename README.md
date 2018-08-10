@@ -1,4 +1,4 @@
-# C# Extension For theia
+# C# Extension For Theia
 Adds C# language support to the Theia IDE.
 
 ## Getting started

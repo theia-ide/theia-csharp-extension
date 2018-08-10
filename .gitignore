@@ -1,3 +1,5 @@
 node_modules
 lib
+omnisharp
+omnisharp-linux-x86.zip
 *.log

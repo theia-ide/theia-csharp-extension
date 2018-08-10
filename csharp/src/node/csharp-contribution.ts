@@ -22,8 +22,7 @@ export class CSharpContribution extends BaseLanguageServerContribution {
             '-stdio',
             '-lsp'
         ];
-        this.logger.info("starting C# language server...")
-        
+        this.logger.info(`starting C# language server: ${command} ${args.join(' ')}`)
         const serverConnection = this.createProcessStreamConnection(command, args);
         // serverConnection.reader.onError(err => console.log(err));
         this.forward(clientConnection, serverConnection);
