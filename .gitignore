@@ -1,5 +1,7 @@
 node_modules
 lib
+src-gen
+webpack.config.js
 omnisharp
 omnisharp-linux-x86.zip
 *.log
