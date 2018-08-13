@@ -14,7 +14,7 @@ import { CSharpGrammarContribution } from './csharp-grammar-contribution';
 export default new ContainerModule(bind => {
     
     bind(CSharpClientContribution).toSelf().inSingletonScope();
-    bind(LanguageClientContribution).toDynamicValue(ctx => ctx.container.get(CSharpClientContribution));
+    bind(LanguageClientContribution).toService(CSharpClientContribution);
 
     bind(LanguageGrammarDefinitionContribution).to(CSharpGrammarContribution).inSingletonScope();
 });
