@@ -25,13 +25,9 @@ export class CSharpClientContribution extends BaseLanguageClientContribution {
 
     protected get globPatterns() {
         return [
-            '**/*.rb',
-            '**/*.rbx',
-            '**/*.rjs',
-            '**/*.gemspec',
-            '**/*.rake',
-            '**/*.ru',
-            '**/*.erb'
+            '**/*.cs',
+            '**/*.csx',
+            '**/*.cake',
         ];
     }
 }
