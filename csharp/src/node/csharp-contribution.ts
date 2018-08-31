@@ -22,14 +22,14 @@ export class CSharpContribution extends BaseLanguageServerContribution {
             '-stdio',
             '-lsp'
         ];
-        this.logger.info(`starting C# language server: ${command} ${args.join(' ')}`)
+        console.info(`starting C# language server: ${command} ${args.join(' ')}`)
         const serverConnection = this.createProcessStreamConnection(command, args);
         this.forward(clientConnection, serverConnection);
     }
 
     protected onDidFailSpawnProcess(error: Error): void {
         super.onDidFailSpawnProcess(error);
-        this.logger.error("Error starting C# language server.");
-        this.logger.error("Please make sure it is installed on your system.");
+        console.error("Error starting C# language server.");
+        console.error("Please make sure it is installed on your system.");
     }
 }

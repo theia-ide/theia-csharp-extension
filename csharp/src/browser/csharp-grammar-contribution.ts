@@ -72,7 +72,7 @@ export class CSharpGrammarContribution implements LanguageGrammarDefinitionContr
         monaco.languages.setLanguageConfiguration(CSHARP_LANGUAGE_ID, this.config);
 
         const cSharpGrammar = require('../../data/csharp.tmLanguage.json');
-        registry.registerTextMateGrammarScope('source.cs', {
+        registry.registerTextmateGrammarScope('source.cs', {
             async getGrammarDefinition() {
                 return {
                     format: 'json',
