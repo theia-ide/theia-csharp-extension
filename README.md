@@ -1,7 +1,7 @@
 # C# Extension For Theia
 [![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-Code%20Now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/theia-ide/theia-csharp-extension)
 
-Adds C# language support to the Theia IDE.
+Adds C# language support to the Theia IDE. Powered by omnisharp.
 
 ## Getting started
 
