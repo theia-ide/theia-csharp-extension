@@ -8,6 +8,10 @@
 import { injectable } from "inversify";
 import { IConnection, BaseLanguageServerContribution } from "@theia/languages/lib/node";
 import { CSHARP_LANGUAGE_ID, CSHARP_LANGUAGE_NAME } from '../common';
+import { parseArgs } from '@theia/process/lib/node/utils';
+import { SpawnOptions } from 'child_process';
+import { ProcessErrorEvent } from '@theia/process/lib/node/process';
+
 const path = require('path');
 
 @injectable()
@@ -16,18 +20,29 @@ export class CSharpContribution extends BaseLanguageServerContribution {
     readonly id = CSHARP_LANGUAGE_ID;
     readonly name = CSHARP_LANGUAGE_NAME;
 
-    start(clientConnection: IConnection): void {
-        const command =  path.resolve(__dirname,'../../omnisharp/run');
-        const args: string[] = [
+    async start(clientConnection: IConnection): Promise<void> {
+        let command =  path.resolve(__dirname,'../../omnisharp/run');
+        let args: string[] = [
             '-stdio',
             '-lsp'
         ];
+
+        const csharpLsCommand = process.env.CSHARP_LS_COMMAND;
+        if (csharpLsCommand) {
+            command = csharpLsCommand;
+            args = parseArgs(process.env.CSHARP_LS_ARGS || '');
+        }
+
         console.info(`starting C# language server: ${command} ${args.join(' ')}`)
-        const serverConnection = this.createProcessStreamConnection(command, args);
+        const serverConnection = await this.createProcessStreamConnectionAsync(command, args, this.getSpawnOptions());
         this.forward(clientConnection, serverConnection);
     }
 
-    protected onDidFailSpawnProcess(error: Error): void {
+    protected getSpawnOptions(): SpawnOptions | undefined {
+        return undefined;
+    }
+
+    protected onDidFailSpawnProcess(error: ProcessErrorEvent): void {
         super.onDidFailSpawnProcess(error);
         console.error("Error starting C# language server.");
         console.error("Please make sure it is installed on your system.");
