@@ -23,7 +23,7 @@
   },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
-    "postinstall": "mkdir omnisharp -p && curl -L https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.31.1/omnisharp-linux-x86.tar.gz | tar xvz -C omnisharp && chmod -R 777 omnisharp",
+    "postinstall": "mkdir omnisharp -p && curl -L https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.32.10/omnisharp-linux-x86.tar.gz | tar xvz -C omnisharp && chmod -R 777 omnisharp",
     "clean": "rimraf lib",
     "build": "tsc",
     "watch": "tsc -w"

@@ -1,8 +1,9 @@
+image: gitpod/workspace-dotnet
 ports:
   - port: 3000
-    protocol: "http"
 tasks:
-  - command: >
-      yarn &&
+  - init: >
+      yarn
+    command: >
       cd browser-app &&
       yarn start --hostname 0.0.0.0 ../..
