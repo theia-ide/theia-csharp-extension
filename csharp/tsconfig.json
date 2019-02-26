@@ -15,7 +15,9 @@
         "sourceMap": true,
         "rootDir": "src",
         "outDir": "lib",
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "declaration": true,
+        "declarationMap": true
     },
     "include": [
         "src"
