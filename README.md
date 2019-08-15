@@ -3,7 +3,7 @@
 
 Adds C# language support to the Theia IDE.
 
-[![Open in Gitpod](https://gitpod.io/button/open.in-gitpod.svg)](https://gitpod.io/#https://github.com/theia-ide/theia-csharp-extension)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/theia-ide/theia-csharp-extension)
 
 ## Getting started
 
